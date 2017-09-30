@@ -44,7 +44,7 @@ def registered():
     spanish = request.form.get("spanish")
     mandarin = request.form.get("mandarin")
 
-    langs = {english, spanish, mandarin}
+    langs = ([english, spanish, mandarin])
     langs.remove(None)
     print langs
 
