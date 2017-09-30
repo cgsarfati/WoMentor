@@ -1,5 +1,6 @@
 """Seeds system data into db"""
 
+from sqlalchemy import func
 import sqlalchemy
 from server import app
 # from model import connect_to_db, db
