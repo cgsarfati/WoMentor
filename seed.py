@@ -17,8 +17,8 @@ def load_users(file, num):
         row = row.rstrip()
         user_id, bio, name, email, nickname, job_title = row.split(",")
         
-        user = User(user_id=user_id, role_id=num, bio=bio, name=name,
-                    email=email, nickname=nickname, job_title=job_title)
+        user = User(user_id=user_id, name=name, email=email, role_id=num, 
+                    bio=bio, nickname=nickname, job_title=job_title)
 
         db.session.add(user)
         db.session.commit()
