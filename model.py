@@ -64,7 +64,7 @@ class Language(db.Model):
 
     __tablename__ = "languages"
 
-    lag_id= db.Column(db.Integer,
+    lang_id= db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
     language=  db.Column(db.String(50), nullable=True)
@@ -269,19 +269,28 @@ def connect_to_db(app):
     db.init_app(app)
 
 def upload_Data():
+
+    Location.query.delete()
+
     sanFrancisco = Location(location="San Francisco")
     eastBay = Location(location="East Bay")
     southBay = Location(location="South Bay")
     northBay = Location(location="North Bay")
     peninsula = Location(location="Peninsula")
 
+    Level.query.delete()
+
     beginner = Level(level="Beginner")
     intermediate = Level(level="Intermediate")
     advance = Level(level= "Advance")
 
+    Language.query.delete()
+
     english = Language(language="English")
     spanish = Language(language="Spanish")
     mandarin = Language(language="Mandarin")
+
+    Day.query.delete()
 
     monday = Day(day="Monday")
     tuesday = Day(day="Tuesday")
@@ -290,6 +299,8 @@ def upload_Data():
     friday = Day(day="Friday")
     saturday = Day(day="Saturday")
     sunday = Day(day="Sunday")
+
+    Activity.query.delete()
 
     whiteboarding = Activity(activity="Whiteboarding")
     interview_practice = Activity(activity="Interview Practice")
