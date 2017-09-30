@@ -3,7 +3,7 @@
 import sqlalchemy
 from server import app
 # from model import connect_to_db, db
-from model import all
+import model
 import random
 #*****************************************************************************#
 
