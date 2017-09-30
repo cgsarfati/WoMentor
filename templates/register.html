@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <form id="registerForm" action="/register" method="POST">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="center">
+                <h4>Check all that apply:</h4>
+                    <input type="checkbox" name="english" value="english">English<br>
+                    <input type="checkbox" name="spanish" value="spanish">Spanish<br>
+                    <input type="checkbox" name="mandarin" value="mandarin">Mandarin<br>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="center">
+                <h4>Coding Level:</h4>
+                    <input type="checkbox" name="one" value="one">One<br>
+                    <input type="checkbox" name="two" value="two">Two<br>
+                    <input type="checkbox" name="three" value="three">Three<br>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="center">
+                <h4>Days Available:</h4>
+                    <input type="checkbox" name="monday" value="monday">Monday<br>
+                    <input type="checkbox" name="tuesday" value="tuesday">Tuesday<br>
+                    <input type="checkbox" name="wednesday" value="wednesday">Wednesday<br>
+                    <input type="checkbox" name="thursday" value="thursday">Thursday<br>
+                    <input type="checkbox" name="friday" value="friday">Friday<br>
+                    <input type="checkbox" name="saturday" value="Saturday">Saturday<br>
+                    <input type="checkbox" name="sunday" value="sunday">Sunday<br>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="center" id="catDiv">
+            <div id="categoryText"><h4>Location:</h4></div>
+                <select>
+                  <option value="sf">San Francisco</option>
+                  <option value="nbay">North Bay</option>
+                  <option value="peninsula">Peninsula</option>
+                  <option value="sbay">South Bay</option>
+                </select>
+            </div>
+            <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="loginBtn" align="center">
+                <button type="submit" value="Log In"><h4>Submit</h4></button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<footer class="footer">
+    <div id="footerContainer" class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12" align="center">
+                <img class="visible-lg visible-md" src="../static/images/planetLogoCut400px.png">
+                <img class="visible-sm"  src="../static/images/planetLogoCut350px.png">
+                <img class="visible-xs" src="../static/images/planetLogoCut.png">
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
