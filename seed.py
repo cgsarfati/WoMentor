@@ -13,7 +13,7 @@ def load_users(file, num):
     """Load fake mentees and mentors for testing from file"""
 
     # if this file is run more than once, deletes prior data
-    User.query.delete()
+    # User.query.delete()
 
     for row in open(file):
         row = row.rstrip()
