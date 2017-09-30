@@ -268,6 +268,44 @@ def connect_to_db(app):
     db.app = app
     db.init_app(app)
 
+def upload_Data():
+    sanFrancisco = Location(location="San Francisco")
+    eastBay = Location(location="East Bay")
+    southBay = Location(location="South Bay")
+    northBay = Location(location="North Bay")
+    peninsula = Location(location="Peninsula")
+
+    beginner = Level(level="Beginner")
+    intermediate = Level(level="Intermediate")
+    advance = Level(level= "Advance")
+
+    english = Language(language="English")
+    spanish = Language(language="Spanish")
+    mandarin = Language(language="Mandarin")
+
+    monday = Day(day="Monday")
+    tuesday = Day(day="Tuesday")
+    wednesday = Day(day="Wednesday")
+    thursday = Day(day="Thursday")
+    friday = Day(day="Friday")
+    saturday = Day(day="Saturday")
+    sunday = Day(day="Sunday")
+
+    whiteboarding = Activity(activity="Whiteboarding")
+    interview_practice = Activity(activity="Interview Practice")
+    code_review = Activity(activity="Code review")
+    general_info = Activity(activity="General Info")
+
+    db.session.add_all([sanFrancisco, eastBay, southBay, northBay, peninsula,
+                        beginner, intermediate,advance,
+                        english, spanish, mandarin,
+                        monday, tuesday, wednesday, thursday, friday, saturday, sunday,
+                        whiteboarding, interview_practice, code_review, general_info])
+    db.session.commit()
+
+
+
+
 
 if __name__ == "__main__":
     # As a convenience, if we run this module interactively, it will
@@ -278,3 +316,4 @@ if __name__ == "__main__":
     connect_to_db(app)
     print "Connected to DB :)"
     db.create_all()
+    upload_Data()
