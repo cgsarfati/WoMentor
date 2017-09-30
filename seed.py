@@ -3,7 +3,8 @@
 import sqlalchemy
 from server import app
 # from model import connect_to_db, db
-import model
+from model import connect_to_db, db
+from model import User, Location, Level, Language, Day, Activity, u_location, u_level, u_language, u_day, u_activity
 import random
 #*****************************************************************************#
 
@@ -120,11 +121,11 @@ def set_val_user_id():
 #*****************************************************************************#
 
 if __name__ == "__main__":
-    model.connect_to_db(app)
+    connect_to_db(app)
 
     # In case tables haven't been created, create them
-    model.db.drop_all()
-    model.db.create_all()
+    db.drop_all()
+    db.create_all()
 
     mentors = "seed_data/mock_mentees.csv"
     mentees = "seed_data/mock_mentors.csv"
