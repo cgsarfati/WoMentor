@@ -17,6 +17,7 @@ def load_users(file, num):
     for row in open(file):
         row = row.rstrip()
         user_id, bio, name, email, nickname, job_title = row.split(",")
+        user_id = int(user_id)
         
         user = User(user_id=user_id, name=name, email=email, role_id=num, 
                     bio=bio, nickname=nickname, job_title=job_title)
