@@ -123,8 +123,8 @@ if __name__ == "__main__":
     model.connect_to_db(app)
 
     # In case tables haven't been created, create them
-    db.drop_all()
-    db.create_all()
+    model.db.drop_all()
+    model.db.create_all()
 
     mentors = "seed_data/mock_mentees.csv"
     mentees = "seed_data/mock_mentors.csv"
