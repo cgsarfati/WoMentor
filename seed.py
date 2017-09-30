@@ -78,8 +78,19 @@ def load_languages():
         db.session.commit()
 
 def load_days():
-    """Load fake availability for all users"""
-    pass
+    """Load fake availability for all users
+
+    Current implementation loads ONE available day per user.
+
+    """
+    
+    users = db.session.query(User.user_id).all()
+    day_id = db.session.query(Days.day_id).all()
+
+    for user in users:
+        # get a random day
+        user_day_id = random.choice(day_id)
+        day = U_Days(user_id=user, day_id=user_day_id)
 
 def load_activities():
     """Load fake activities for all users"""
