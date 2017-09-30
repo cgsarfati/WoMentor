@@ -43,8 +43,6 @@ def load_levels():
     for user in users:
         # get a random level id
         user_level_id = random.choice(level_id)
-        # get corresponding level text
-        # user_level = db.session.query(Level.level).filter(Level.level_id=user_level_id).first()
         level = U_Level(user_id=user, level_id=user_level_id)
 
         db.session.add(level)
@@ -60,8 +58,6 @@ def load_locations():
     for user in users:
         # get a random location
         user_location_id = random.choice(location_id)
-        # get corresponding location text
-        # user_location = db.session.query(Locations.location).filter(Locations.loc_id=location_id).first()
         location = U_Location(user_id=user, loc_id=user_location_id)
 
         db.session.add(location)
@@ -69,7 +65,17 @@ def load_locations():
 
 def load_languages():
     """Load fake languages for all users"""
-    pass
+    
+    users = db.session.query(User.user_id).all()
+    language_id = db.session.query(Languages.lang_id).all()
+
+    for user in users:
+        # get a random language
+        user_language_id = random.choice(language_id)
+        language = U_Languages(user_id=user, lang_id=user_language_id)
+
+        db.session.add(language)
+        db.session.commit()
 
 def load_days():
     """Load fake availability for all users"""
