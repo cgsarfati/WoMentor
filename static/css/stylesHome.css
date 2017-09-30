@@ -1,0 +1,45 @@
+body {
+  background-image: url("../images/backgroundHomesmall.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 100px;
+  font-family: 'Satisfy', cursive;
+  font-family: 'Poiret One', cursive;
+}
+header {
+    font-size: 20px;
+}
+
+#headerDiv {
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+/*#boxBar {
+    font-family: 'Questrial', sans-serif;
+}*/
+
+#boxContainer {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}

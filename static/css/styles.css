@@ -1,0 +1,264 @@
+
+
+body {
+  background-color: #f0edce;
+  margin: 0;
+  padding: 0;
+  color: #4F4F49;
+  font-family: 'Timmana', sans-serif;
+}
+
+/*Header*/ 
+.container-fluid {
+  background-color: #f0edce;
+}
+
+.navbar {
+  border: none;
+}
+
+.navbar-nav {
+  background-color: #f0edce;
+}
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 100%;
+}
+
+.navbar-default .navbar-brand {
+    padding-bottom: 20%;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: #69bcc5;
+}
+
+
+ul#navList {
+  font-size: 130%;
+  font-family: 'Contrail One', cursive;
+}
+
+#eventSearch a {
+    color: #e95628;
+}
+
+h4 {
+  font-family: 'Contrail One', cursive;
+}
+
+
+
+#register a, #userPage a{
+  color: #69bcc5;
+  border: 2px solid white;
+  margin: -1px 0px -1px 10px;
+}
+
+
+
+#myLinks a:hover { 
+  color: #69bcc5;
+  text-decoration: none;
+}
+
+#register a:hover , #userPage a:hover {
+  color: #e95628;
+}
+
+
+#login a:link, #login a:visited, #logout a:link, #logout a:visited {
+  color: #eec35e;
+  background-color: #fff;
+  padding: 12px;
+}
+
+#login a:hover, #logout a:hover {
+  color: #69bcc5;
+}
+
+
+.nav>li {
+  margin: 0px 10px;
+}
+
+
+
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #e95628;
+  font-size: 110%;
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 17px;
+    margin-right: 4%;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+
+
+/* main content */
+select {
+    background-color: #ffffff;
+}
+
+
+
+
+/*footer*/
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*height: 60px;*/
+    line-height: 60px;
+    /*background-color: #f5f5f5;*/
+    /*display: block*/
+}
+
+
+
+@media (min-width: 1200px){
+  ul#navList {
+  padding: 35px 5% 5% 0;
+  }
+}
+
+/* md 992-1199 */
+@media (max-width: 1199px) {
+
+  ul#navList {
+  padding: 35px 5% 5% 0;
+  }
+}
+
+
+/* sm 768-991 */
+
+@media (max-width: 991px) {
+  
+  /* header */
+  ul#navList {
+  padding: 35px 5% 5% 0;
+  }
+ 
+}
+
+
+/* xs 767px and below */
+@media (max-width: 767px){
+
+ /* /* header */
+  .navbar-brand {
+    padding-left: 7%;
+  }
+
+  ul#navList {
+  padding: 10px 0% 0% 0%;
+  }
+
+  #myLinks {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-top-width: 0px;
+    margin-left: 0px;
+    width: 100%;
+    background-color: transparent;
+    color: #69bcc5;
+    text-align: center;
+  }
+  #myLinks a:link, #myLinks a:visited {
+  color: #69bcc5;
+  background-color: transparent;
+  border-top: 2px #fff solid;
+  }
+  
+  #myLinks a:hover { 
+  color: #ecc15e;
+  text-decoration: none;
+  }
+
+   #register a:link, #userPage a:link {
+    border: none;
+    margin: 0px 0px 0px 0px;
+    border-top: 2px #fff solid;
+  }
+
+  ul.navbar-right {
+    padding-right: 0px;
+  }
+  ul.nav, ul.navbar-nav {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  #eventSearch a:link {
+    border-top: none;
+  }
+
+  .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+  }
+
+  .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+  }
+  .navbar-toggle {
+    padding: -2px 8px 0px 8px;
+    font-size: 170%;
+  }
+
+}
+
+/* xxs */
+@media (max-width: 321px) {
+  
+  /* header */
+  ul#navList {
+  padding: 10px 0% 0% 0%;
+  }
+
+  .navbar-brand {
+    font-size: 300%;
+  }
+  .navbar-toggle {
+    padding: -2px 8px 0px 8px;
+    font-size: 190%;
+  }
+  /* main content */
+}
+
+
+
+
+
+
+
+
+
+ 
