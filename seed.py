@@ -93,8 +93,18 @@ def load_days():
         day = U_Days(user_id=user, day_id=user_day_id)
 
 def load_activities():
-    """Load fake activities for all users"""
-    pass
+    """Load fake activities for all users
+
+    Current implementation loads ONE activity per user.
+    """
+    
+    users = db.session.query(User.user_id).all()
+    activity_id = db.session.query(Activities.act_id).all()
+
+    for user in users:
+        # get a random activity
+        user_act_id = random.choice(activity_id)
+        activity = U_Activity(user_id=user, act_id=user_act_id)
 
 def set_val_user_id():
     """Set value for the next user_id after seeding database"""
@@ -126,6 +136,15 @@ if __name__ == "__main__":
     print "Loaded mentees to user table"
     load_levels()
     print "Loaded levels for all users"
+    load_locations()
+    print "Loaded locations for all users"
+    load_languages()
+    print "Loaded languages for all users"
+    load_days()
+    print "Loaded availability for all users"
+    load_activities()
+    print "Loaded activities for all users"
+
 
     # last fuunction
     set_val_user_id()
