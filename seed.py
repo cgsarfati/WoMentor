@@ -125,8 +125,8 @@ if __name__ == "__main__":
     connect_to_db(app)
 
     # In case tables haven't been created, create them
-    db.drop_all()
-    db.create_all()
+    # db.drop_all()
+    # db.create_all()
 
     mentors = "seed_data/mock_mentees.csv"
     mentees = "seed_data/mock_mentors.csv"
