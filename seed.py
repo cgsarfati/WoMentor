@@ -120,7 +120,7 @@ def set_val_user_id():
 #*****************************************************************************#
 
 if __name__ == "__main__":
-    connect_to_db(app)
+    model.connect_to_db(app)
 
     # In case tables haven't been created, create them
     db.drop_all()
