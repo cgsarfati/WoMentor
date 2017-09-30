@@ -3,6 +3,10 @@
 from flask_sqlalchemy import SQLAlchemy
 
 
+=======
+from datetime import date, datetime
+
+
 
 
 db = SQLAlchemy()
@@ -26,6 +30,7 @@ class Role(db.Model):
                                                self.role)
 
 
+=======
 class Location(db.Model):
 
     __tablename__ = "locations"
@@ -41,6 +46,7 @@ class Location(db.Model):
         return "<Locations loc_id=%s location=%s>" % (self.loc_id, self.
                                                self.location)
 
+=======
 class Level(db.Model):
 
     __tablename__ = "levels"
@@ -57,6 +63,8 @@ class Level(db.Model):
                                                self.level)
 
 
+=======
+
 class Language(db.Model):
 
     __tablename__ = "languages"
@@ -64,6 +72,7 @@ class Language(db.Model):
     lag_id= db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
+
     language=  db.Column(db.String(50), nullable=True)
 
     def __repr__(self):
@@ -71,6 +80,9 @@ class Language(db.Model):
 
         return "<Languages lang_id=%s language=%s>" % (self.lang_id, self.
                                                self.language)
+
+=======
+    languages=  db.Column(db.String(50), nullable=True)
 
 
 class Day(db.Model):
@@ -82,12 +94,15 @@ class Day(db.Model):
                         primary_key=True)
     day=  db.Column(db.String(50), nullable=True)
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return "<Days day_id=%s day=%s>" % (self.day_id, self.
                                                self.day)
 
+
+=======
 
 class Activity(db.Model):
 
@@ -98,12 +113,15 @@ class Activity(db.Model):
                         primary_key=True)
     activity=  db.Column(db.String(100), nullable=True)
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return "<Activities act_id=%s activity=%s>" % (self.act_id, self.
                                                self.activity)
 
+
+=======
 
 
 # Association tables
@@ -120,6 +138,7 @@ class u_location(db.Model):
     loc_id = db.Column(db.Integer, db.ForeignKey('locations.loc_id'))
 
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
@@ -127,6 +146,8 @@ class u_location(db.Model):
                                                self.loc_id)
 
 
+
+=======
 
 class u_level(db.Model):
 
@@ -138,12 +159,15 @@ class u_level(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     level_id = db.Column(db.Integer, db.ForeignKey('levels.level_id'))
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return "<User Level user_id=%s level_id =%s>" % (self.user_id, self.
                                                self.level_id)
 
+
+=======
 
 
 class u_language(db.Model):
@@ -156,12 +180,15 @@ class u_language(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     lang_id = db.Column(db.Integer, db.ForeignKey('languages.lang_id'))
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return "<User languages user_id=%s lang_id =%s>" % (self.user_id, self.
                                                self.lang_id)
 
+
+=======
 
 class u_day(db.Model):
 
@@ -174,6 +201,7 @@ class u_day(db.Model):
     day_id = db.Column(db.Integer, db.ForeignKey('days.day_id'))
 
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
@@ -181,6 +209,8 @@ class u_day(db.Model):
                                                self.day_id)
 
 
+
+=======
 
 class u_activity(db.Model):
 
@@ -193,6 +223,7 @@ class u_activity(db.Model):
     act_id = db.Column(db.Integer, db.ForeignKey('activities.act_id'))
 
 
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
@@ -203,12 +234,19 @@ class u_activity(db.Model):
 
 class User(db.Model):
     """Users (Mentor/Mentee) info"""
+=======
+
+
+class User(db.Model):
+    """Users info Mentor/Mentee info"""
+
 
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
+
     role_id = db.Column(db.Integer, 
                         db.ForeignKey('roles.role_id'))
     bio = db.Column(db.String(100), nullable=True) 
@@ -217,11 +255,27 @@ class User(db.Model):
     nickname = db.Column(db.String(25), nullable=True)    
     job_title = db.Column(db.String(100), nullable=True)  
     match_id = db.Column(db.Integer, nullable=True)
+=======
+    name = db.Column(db.String(100), nullable=True)
+    email = db.Column(db.String(64), nullable=True)
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.role_id'))
+    bio 
+    name    
+    email   
+    nickname    
+    job_title   
+    match_id
+
 
     def __repr__(self):
         """Provide helpful representation when printed."""
 
+
         return "<User user_id=%s role=%s job_title=%s> match_id=%s" % (self.user_id, self.
                                                self.role_id, self.job_title, self.job_title)
+=======
+        return "<User user_id=%s name =%s email=%s>" % (self.user_id, self.
+                                               self.email)
+
 
 
