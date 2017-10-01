@@ -13,12 +13,14 @@ A Flask app that matches mentors and mentees based on mutual preferences, taking
   - Both users can see match information
  
 You can also:
-  - Cancel a meeting and receive email update
+  - Cancel a meeting and receive email updates
   - View sponsors
 
 # Database
 
-![Homepage](/static/img/homepage.png)
+![Homepage](/static/img/database.png)
+
+We currently have a fully-seeded PostgreSQL database with 100 fake users via Mockaroo. 
 
 ### Tech Stack
 - SQLAlchemy
@@ -29,15 +31,19 @@ You can also:
 - Bootstrap, HTML/CSS
 - Jinja2
 
-# About
+# Business Plan
 
-WoMentor was created by a group of Hackbright Academy graduates for the ExPat Women Hackathon in San Francisco, CA.
+![Homepage](/static/img/businessplan.png)
+
+# About Us
+
+WoMentor was created by a group of Hackbright Academy graduates for the ExPat Women Hackathon 2017 in San Francisco, CA.
 
 # Contact Us
 
-https://github.com/ceorourke/
-https://github.com/vmirari/
-https://github.com/thegreyhaven/
-https://github.com/cgsarfati/
-https://github.com/agerista/
-https://github.com/rhartung/
+- https://github.com/ceorourke/
+- https://github.com/vmirari/
+- https://github.com/thegreyhaven/
+- https://github.com/cgsarfati/
+- https://github.com/agerista/
+- https://github.com/rhartung/
