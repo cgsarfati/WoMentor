@@ -15,7 +15,7 @@ class Role(db.Model):
     __tablename__ = "roles"
 
     role_id= db.Column(db.Integer,
-                        autoincrement=True,
+                        autoincrement=False,
                         primary_key=True)
     role=  db.Column(db.String(25), nullable=True)
 
@@ -307,11 +307,16 @@ def upload_Data():
     code_review = Activity(activity="Code review")
     general_info = Activity(activity="General Info")
 
+    Role.query.delete()
+
+    mentor = Role(role_id=1, role="Mentor")
+    mentee = Role(role_id=2, role="Mentee")
+
     db.session.add_all([sanFrancisco, eastBay, southBay, northBay, peninsula,
                         beginner, intermediate,advance,
                         english, spanish, mandarin,
                         monday, tuesday, wednesday, thursday, friday, saturday, sunday,
-                        whiteboarding, interview_practice, code_review, general_info])
+                        whiteboarding, interview_practice, code_review, general_info, mentor, mentee])
     db.session.commit()
 
 

@@ -49,43 +49,43 @@ def registered():
 
     for lang in langs:
         language = Language.filter_by(lag_id=language)
-        new_lang = u_language(user_id=user_id, lang_id=lang)
-        db.session.add(new_lang)
+    #     new_lang = u_language(user_id=user_id, lang_id=lang)
+    #     db.session.add(new_lang)
 
-    db.session.commit()
+    # db.session.commit()
 
-    # Add availability to days table
-    mon = request.form.get("monday")
-    tues = request.form.get("tuesday")
-    wed = request.form.get("wednesday")
-    thurs = request.form.get("thursday")
-    fri = request.form.get("friday")
-    sat = request.form.get("saturday")
-    sun = request.form.get("sunday")
+    # # Add availability to days table
+    # mon = request.form.get("monday")
+    # tues = request.form.get("tuesday")
+    # wed = request.form.get("wednesday")
+    # thurs = request.form.get("thursday")
+    # fri = request.form.get("friday")
+    # sat = request.form.get("saturday")
+    # sun = request.form.get("sunday")
 
-    avail = set(mon, tues, wed, thurs, fri, sat, sun)
-    avail.remove(None)
+    # avail = set(mon, tues, wed, thurs, fri, sat, sun)
+    # avail.remove(None)
 
-    for time in avail:
-        free = Day.filter_by(day_id=time)
-        new_avail = u_days(user_id=user_id, day_id=free)
-        db.session.add(new_avail)
-    db.session.commit()
+    # for time in avail:
+    #     free = Day.filter_by(day_id=time)
+    #     new_avail = u_days(user_id=user_id, day_id=free)
+    #     db.session.add(new_avail)
+    # db.session.commit()
 
 
-    loc = request.form.get("location")
-    location = Location.filter_by(location=loc)
-    new_loc = u_location(user_id=user_id, loc_id=location)
-    db.session.add(new_loc)
-    db.session.commit()
+    # loc = request.form.get("location")
+    # location = Location.filter_by(location=loc)
+    # new_loc = u_location(user_id=user_id, loc_id=location)
+    # db.session.add(new_loc)
+    # db.session.commit()
 
-    level = request.form.get("level")
-    code_level = Level.filter_by(level=level)
-    new_level = u_level(user_id=user_id, level_id=level)
-    db.session.add(new_level)
-    db.session.commit()
+    # level = request.form.get("level")
+    # code_level = Level.filter_by(level=level)
+    # new_level = u_level(user_id=user_id, level_id=level)
+    # db.session.add(new_level)
+    # db.session.commit()
 
-    activity = request.form.get('activity')
+    # activity = request.form.get('activity')
 
 
     return redirect('/register')
