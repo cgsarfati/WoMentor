@@ -27,11 +27,15 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    padding-bottom: 20%;
+    font-size: 50px;
+    padding-bottom: 26%;
+}
+a.navbar-brand {
+  margin-top: 25px;
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-  color: #69bcc5;
+  color: #afb0b0;
 }
 
 
@@ -51,7 +55,7 @@ h4 {
 
 
 #register a, #userPage a{
-  color: #69bcc5;
+  color: #afb0b0;
   border: 2px solid white;
   margin: -1px 0px -1px 10px;
 }
@@ -84,8 +88,12 @@ h4 {
 button {
   background-color: #ffffff;
   border: none;
-  color: #333;
-  font-size: 110%;
+  color: #eec35e;
+  font-size: 310%;
+}
+
+button:hover {
+  box-shadow: 5px 5px 2px #ccc;
 }
 
 /*button:focus {
@@ -119,7 +127,16 @@ select {
     background-color: #ffffff;
 }
 
-
+#containerMain {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10%;
+    padding-left: 10%;
+}
 
 
 /*footer*/
@@ -184,11 +201,11 @@ select {
     margin-left: 0px;
     width: 100%;
     background-color: transparent;
-    color: #69bcc5;
+    color: #afb0b0;
     text-align: center;
   }
   #myLinks a:link, #myLinks a:visited {
-  color: #69bcc5;
+  color: #afb0b0;
   background-color: transparent;
   border-top: 2px #fff solid;
   }
