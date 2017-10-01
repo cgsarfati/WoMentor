@@ -1,8 +1,6 @@
 # WoMentor
 
-![Homepage](/static/img/homePage.png)
-
-![Login Page](/static/img/login.png)
+![Homepage](/static/images/homePage.png)
 
 A Flask app that matches mentors and mentees based on mutual preferences, taking away the hassle of planning meetups when there is already an underlying incompatibility.
 
@@ -20,7 +18,7 @@ You can also:
 
 # Data Model
 
-![Data Model](/static/img/dataBase.png)
+![Data Model](/static/images/dataBase.png)
 
 We currently have a fully-seeded PostgreSQL database with 100 fake users via Mockaroo. 
 
