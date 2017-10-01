@@ -6,8 +6,9 @@ from flask_debugtoolbar import DebugToolbarExtension
 from flask import (Flask, render_template, redirect, request, flash,
                    session, jsonify)
 
-from model import (User, Language, u_language, Day, u_day, Location, 
-                   u_location, Level, u_level, Activity, u_activity, connect_to_db, db)
+from model import (User, Language, u_language, Day, u_day, Location,
+                   u_location, Level, u_level, Activity, u_activity,
+                   connect_to_db, db)
 
 
 app = Flask(__name__)
@@ -50,54 +51,49 @@ def registered():
 
     # Add user languages to db
     for lang in langs:
-        print lang
-        # print app.config['SQLALCHEMY_TRACK_MODIFICATIONS']
-        print app.config.keys()
         language = db.session.query(Language).filter(Language.language == lang).one()
-        # new_lang = u_language(user_id=user_id, lang_id=lang)
-        # db.session.add(new_lang)
-        print language
-    # db.session.commit()
+        new_lang = u_language(user_id=user_id, lang_id=lang)
+        db.session.add(new_lang)
+    db.session.commit()
 
     # Check availability of user
-    # mon = request.form.get("monday")
-    # tues = request.form.get("tuesday")
-    # wed = request.form.get("wednesday")
-    # thurs = request.form.get("thursday")
-    # fri = request.form.get("friday")
-    # sat = request.form.get("saturday")
-    # sun = request.form.get("sunday")
+    mon = request.form.get("monday")
+    tues = request.form.get("tuesday")
+    wed = request.form.get("wednesday")
+    thurs = request.form.get("thursday")
+    fri = request.form.get("friday")
+    sat = request.form.get("saturday")
+    sun = request.form.get("sunday")
 
-    # avail = {mon, tues, wed, thurs, fri, sat, sun}
-    # avail.remove(None)
+    avail = {mon, tues, wed, thurs, fri, sat, sun}
 
-    # # Add user availability to db
-    # for time in avail:
-    #     free = Day.filter_by(day_id=time)
-    #     new_avail = u_days(user_id=user_id, day_id=free)
-    #     db.session.add(new_avail)
-    # db.session.commit()
+    # Add user availability to db
+    for time in avail:
+        free = Day.filter_by(day_id=time)
+        new_avail = u_days(user_id=user_id, day_id=free)
+        db.session.add(new_avail)
+    db.session.commit()
 
     # Add user location to db
-    # loc = request.form.get("location")
-    # location = Location.filter_by(location=loc)
-    # new_loc = u_location(user_id=user_id, loc_id=location)
-    # db.session.add(new_loc)
-    # db.session.commit()
+    loc = request.form.get("location")
+    location = Location.filter_by(location=loc)
+    new_loc = u_location(user_id=user_id, loc_id=location)
+    db.session.add(new_loc)
+    db.session.commit()
 
-    # # Add user level to db
-    # level = request.form.get("level")
-    # code_level = Level.filter_by(level=level)
-    # new_level = u_level(user_id=user_id, level_id=level)
-    # db.session.add(new_level)
-    # db.session.commit()
+    # Add user level to db
+    level = request.form.get("level")
+    code_level = Level.filter_by(level=level)
+    new_level = u_level(user_id=user_id, level_id=level)
+    db.session.add(new_level)
+    db.session.commit()
 
-    # # Add users requested activity to db
-    # activity = request.form.get('activity')
-    # act = Activity.filter_by(activity=activity)
-    # new_act = u_activity(user_id=user_id, act_id=act)
-    # db.session.add(new_act)
-    # db.session.commit()
+    # Add users requested activity to db
+    activity = request.form.get('activity')
+    act = Activity.filter_by(activity=activity)
+    new_act = u_activity(user_id=user_id, act_id=act)
+    db.session.add(new_act)
+    db.session.commit()
 
     return redirect('/register')
 
