@@ -51,6 +51,8 @@ def registered():
     # Add user languages to db
     for lang in langs:
         print lang
+        # print app.config['SQLALCHEMY_TRACK_MODIFICATIONS']
+        print app.config.keys()
         language = db.session.query(Language).filter(Language.language == lang).one()
         # new_lang = u_language(user_id=user_id, lang_id=lang)
         # db.session.add(new_lang)
@@ -128,8 +130,8 @@ if __name__ == "__main__":
     app.debug = True
     # make sure templates, etc. are not cached in debug mode
     app.jinja_env.auto_reload = app.debug
-
-    # connect_to_db(app)
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    connect_to_db(app)
 
     # Use the DebugToolbar
     DebugToolbarExtension(app)
