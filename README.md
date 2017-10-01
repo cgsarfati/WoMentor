@@ -33,7 +33,7 @@ We currently have a fully-seeded PostgreSQL database with 100 fake users via Moc
 
 # Business Plan
 
-![Business Plan](/static/img/businessPlan.png)
+![Business Plan](/static/images/businessPlan.png)
 
 # About Us
 
