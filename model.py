@@ -331,6 +331,10 @@ if __name__ == "__main__":
     from server import app
     connect_to_db(app)
     print "Connected to DB :)"
+<<<<<<< HEAD
+    print app.config['SQLALCHEMY_TRACK_MODIFICATIONS']
+=======
     
+>>>>>>> master
     # db.create_all()
     # upload_Data()
