@@ -7,6 +7,7 @@
     <title>WoMentor</title>
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/styles.css">
+     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   
 
 </head>
@@ -19,14 +20,14 @@
               <span class="sr-only">Toggle navigation</span>
               <span class="glyphicon glyphicon-option-vertical"></span>
             </button>
-            <a class="navbar-brand" href="/homepage">
+            <a class="navbar-brand" href="main">WoMentor
             </a>
           </div>
           <div class="collapse navbar-collapse" id="myLinks">
             <ul class="nav navbar-nav navbar-right" id="navList">
-              <li id="eventSearch"><a href="/homepage">FIND AN EVENT</a></li>
-              <li id="logout"><a href="/logout">LOGOUT</a></li>
-              <li id="userPage" class="text-center"><a href="/users/{{session['user_id']}}">MY PAGE</a></li>
+              <li id="profile"><a href="/user/{user_id}">My Page</a></li>
+              <li id="sponsor"><a href="/sponsor">Sponsors</a></li>
+              <li id="logout"><a href="/logout">Logout</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container fluid-->
@@ -36,27 +37,27 @@
     {% block content %}
         Put your body here.
     {% endblock %}
-    <footer class="footer">
+    <!-- <footer class="footer">
     <div id="footerContainer" class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-2 col-lg-2" align="center">
+            <div class="col-sm-2 col-md-2 col-lg-2" align="center">
                 <a href="/">Meet our sponsors</a>
             </div>
-            <div class="col-sm-12 col-md-2 col-lg-2" align="center">
+            <div class="col-sm-2 col-md-2 col-lg-2" align="center">
                 <a href="/">About Us</a>
             </div>
-            <div class="col-sm-12 col-md-2 col-lg-2" align="center">
+            <div class="col-sm-2 col-md-2 col-lg-2" align="center">
                 <a href="/">FAQ</a>
             </div>
-            <div class="col-sm-12 col-md-2 col-lg-2" align="center">
+            <div class="col-sm-2 col-md-2 col-lg-2" align="center">
                 <a href="/">Mentors of the Month</a>
             </div>
-            <div class="col-sm-12 col-md-2 col-lg-2" align="center">
+            <div class="col-sm-2 col-md-2 col-lg-2" align="center">
                 Contact Us
             </div>
         </div>
     </div>
-  </footer>
+  </footer> -->
     <!-- <script src='nprogress.js'></script> -->
     <script src="/static/js/jquery-3.1.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>

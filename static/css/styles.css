@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   color: #4F4F49;
-  font-family: 'Timmana', sans-serif;
+  font-family: 'Poiret One', cursive;
 }
 
 /*Header*/ 
@@ -37,7 +37,7 @@ body {
 
 ul#navList {
   font-size: 130%;
-  font-family: 'Contrail One', cursive;
+  font-family: 'Poiret One', cursive;
 }
 
 #eventSearch a {
@@ -45,7 +45,7 @@ ul#navList {
 }
 
 h4 {
-  font-family: 'Contrail One', cursive;
+  font-family: 'Poiret One', cursive;
 }
 
 
@@ -59,24 +59,19 @@ h4 {
 
 
 #myLinks a:hover { 
-  color: #69bcc5;
+  color: #ffffff;
   text-decoration: none;
 }
 
-#register a:hover , #userPage a:hover {
-  color: #e95628;
-}
 
 
-#login a:link, #login a:visited, #logout a:link, #logout a:visited {
+#logout a:link, #logout a:visited {
   color: #eec35e;
   background-color: #fff;
   padding: 12px;
 }
 
-#login a:hover, #logout a:hover {
-  color: #69bcc5;
-}
+
 
 
 .nav>li {
@@ -87,15 +82,15 @@ h4 {
 
 
 button {
-  background-color: transparent;
+  background-color: #ffffff;
   border: none;
-  color: #e95628;
+  color: #333;
   font-size: 110%;
 }
 
-button:focus {
+/*button:focus {
   outline: 0;
-}
+}*/
 
 
 
