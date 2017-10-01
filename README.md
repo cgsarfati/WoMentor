@@ -1,6 +1,8 @@
 # WoMentor
 
-![Homepage](/static/img/homepage.png)
+![Homepage](/static/img/homePage.png)
+
+![Login Page](/static/img/login.png)
 
 A Flask app that matches mentors and mentees based on mutual preferences, taking away the hassle of planning meetups when there is already an underlying incompatibility.
 
@@ -16,9 +18,9 @@ You can also:
   - Cancel a meeting and receive email updates
   - View sponsors
 
-# Database
+# Data Model
 
-![Homepage](/static/img/database.png)
+![Data Model](/static/img/dataBase.png)
 
 We currently have a fully-seeded PostgreSQL database with 100 fake users via Mockaroo. 
 
@@ -33,7 +35,7 @@ We currently have a fully-seeded PostgreSQL database with 100 fake users via Moc
 
 # Business Plan
 
-![Homepage](/static/img/businessplan.png)
+![Business Plan](/static/img/businessPlan.png)
 
 # About Us
 
