@@ -1,5 +1,8 @@
 """Helper functions for using LinkedIn API and OAuth."""
 
+import os
+import requests
+
 OAUTH_URL = "https://www.linkedin.com/oauth/v2/authorization"
 ACCESS_TOKEN_URL = "https://www.linkedin.com/oauth/v2/accessToken"
 REQUEST_DATA_URL = "https://api.linkedin.com/v1/people/~?format=json"
