@@ -5,11 +5,11 @@
     <div class="row">
         <!-- we need to fix this -->
         <img src="{{}}" alt="Profile Pic" height="300px" width="300px"><!-- picture-url from linkedIn --> 
-        <div name="name" id="name">{{}}</div><!-- first and last name -->
-        <div name="location" id="location">{{}}</div>
+        <div name="name" id="name">{{ user.name }}</div><!-- first and last name -->
+        <div name="location" id="location">{{ }}</div> 
         <div name="availability" id="availability">{{}}</div>
         <div name="language" id="language">{{}}</div>
-        <div name="bio" id="bio">{{}}</div>
+        <div name="bio" id="bio">{{ user.bio }}</div>
 
     </div>
 </div>
