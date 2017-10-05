@@ -24,7 +24,7 @@ def load_users(file, num):
                     bio=bio, nickname=nickname, job_title=job_title)
 
         db.session.add(user)
-        db.session.commit()
+    db.session.commit()
 
 def load_levels():
     """Load fake levels for all users"""
@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
     # In case tables haven't been created, create them
     # db.drop_all()
-    # db.create_all()
+    db.create_all()
 
     mentors = "seed_data/mock_mentees.csv"
     mentees = "seed_data/mock_mentors.csv"
