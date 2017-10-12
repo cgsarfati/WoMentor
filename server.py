@@ -38,6 +38,7 @@ def register():
 def registered():
     """Parses registration form data"""
 
+    user_id = 1
     # Check language capabilities of user
     # TODO: figure out how to get the user
     english = request.form.get("english")
@@ -47,12 +48,12 @@ def registered():
     langs = ([english, spanish, mandarin])
     langs.remove(None)
 
-
     # Add user languages to db
     for lang in langs:
 
-        language = Language.filter_by(lag_id=language)
-        new_lang = u_language(user_id=user_id, lang_id=lang)
+        language = db.session.query(Language.lang_id).filter(Language.language == lang)
+        print language
+        new_lang = u_language(user_id=user_id, lang_id=language)
         db.session.add(new_lang)
 
     db.session.commit()
@@ -68,29 +69,35 @@ def registered():
 
     avail = {mon, tues, wed, thurs, fri, sat, sun}
 
-
     # Add user availability to db
     for time in avail:
-        free = Day.filter_by(day_id=time)
-        new_avail = u_days(user_id=user_id, day_id=free)
+        free = db.session.query(Day.day_id).filter(Day.day_id == time)
+        new_avail = u_day(user_id=user_id, day_id=free)
         db.session.add(new_avail)
     db.session.commit()
 
-
     # Add user location to db
-    new_loc = u_location(user_id=user_id, loc_id=location)
+    location = request.form.get("location")
+    local = db.session.query(Location.loc_id).filter(Location.location == location)
+    new_loc = u_location(user_id=user_id, loc_id=local)
     db.session.add(new_loc)
     db.session.commit()
 
+    levels = {"one": 1, "two": 2, "three": 3}
+
     # Add user level to db
     level = request.form.get("level")
-    new_level = u_level(user_id=user_id, level_id=level)
+    lev = levels[level]
+    new_level = u_level(user_id=user_id, level_id=lev)
     db.session.add(new_level)
     db.session.commit()
 
+    translate = {"wboarding": "Whiteboarding", "intPrep": "Interview Practice", "codeReview": "Code review", "pProgramming": "Code review", "CarAdvice": "General Info"}
+
     # Add users requested activity to db
     activity = request.form.get('activity')
-    act = Activity.filter_by(activity=activity)
+    trans = translate[activity]
+    act = db.session.query(Activity.act_id).filter(Activity.activity == trans)
     new_act = u_activity(user_id=user_id, act_id=act)
     db.session.add(new_act)
     db.session.commit()
